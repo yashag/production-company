@@ -2,9 +2,12 @@
   "name": "production-company",
   "version": "1.0.0",
   "description": "A production company console application for UI graphs",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "test"
+  },
+  "bin": {
+    "pcda": "./bin/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/yashag/production-company/issues"
   },
-  "homepage": "https://github.com/yashag/production-company#readme"
+  "homepage": "https://github.com/yashag/production-company#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "commander": "^5.0.0",
+    "config": "^3.3.1",
+    "moment": "^2.24.0"
+  }
 }

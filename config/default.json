@@ -1,0 +1,17 @@
+{
+    "moviesAPI": {
+        "endpoints": {
+            "discovery": {
+                "baseUrl": "https://api.themoviedb.org/3/discover/movie"
+            },
+            "genres": {
+                "baseUrl": "https://api.themoviedb.org/3/genre/movie/list"
+            }
+        },
+        "apiKey": "1cf34573c30a8ba6cb55bccbb18d756c",
+        "language": "en-US"
+    },
+    "data": {
+        "path": "data"
+    }
+}
