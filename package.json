@@ -1,0 +1,24 @@
+{
+  "name": "production-company",
+  "version": "1.0.0",
+  "description": "A production company console application for UI graphs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashag/production-company.git"
+  },
+  "keywords": [
+    "production",
+    "movie",
+    "application"
+  ],
+  "author": "Yasha Gootkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yashag/production-company/issues"
+  },
+  "homepage": "https://github.com/yashag/production-company#readme"
+}
