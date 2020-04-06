@@ -15,16 +15,31 @@ async function aggregateDataFor(companyId) {
             const movieGenres = await getMovieGenres();
             insertGenres(movieGenres);
 
-            const moviesData = await getMoviesData(companyId);
+            const moviesData = await queryAllMovieResults(companyId);
 
-            // console.log(moviesData.results[0])
-            createMoviesPerMonthGraph(moviesData.results);
-            createAverageScoreGraph(moviesData.results);
+            createMoviesPerMonthGraph(moviesData);
+            createAverageScoreGraph(moviesData);
             console.log("The movies data has been aggregated and is ready to use.");
         } catch (error) {
             console.error("An error occured during data aggregation. Further details: ", error);
         }
     }
 };
+
+ // sub-optimal, but due to time constraints
+async function queryAllMovieResults(companyId) {
+    let moviesData = [];
+    let page = 1;
+    let maxPage = 1;
+
+    while(page <= maxPage) {
+        const moviesDataResponse = await getMoviesData(companyId, page);
+        if(moviesDataResponse["total_pages"] != maxPage) maxPage = moviesDataResponse["total_pages"];
+        moviesData = moviesData.concat(moviesDataResponse.results);
+        page++;
+    }
+
+    return moviesData;
+}
 
 module.exports = aggregateDataFor;
